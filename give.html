@@ -15,14 +15,26 @@
   <!-- Navbar -->
   <header class="flex justify-between items-center px-8 py-4 border-b shadow-sm sticky top-0 bg-white z-50">
     <div class="font-bold text-xl">NEWCOMERS PROJECT</div>
-    <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="index.html#about" class="hover:underline">About Us</a>
-      <a href="index.html#resources" class="hover:underline">Resources</a>
-      <a href="index.html#apprenticeship" class="hover:underline">Apprenticeship</a>
-      <a href="archives.html" class="hover:underline">Archives</a>
-      <a href="give.html" class="hover:underline font-semibold text-blue-600">Give</a>
-      <a href="contact.html" class="hover:underline">Contact</a>
+
+    <!-- Hamburger button (mobile only) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle menu">
+      <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="menu" class="hidden md:flex md:flex-row md:space-x-6 flex-col space-y-2 md:space-y-0">
+      <a href="index.html" class="hover:underline block py-2 md:py-0">Home</a>
+      <a href="index.html#about" class="hover:underline block py-2 md:py-0">About Us</a>
+      <a href="index.html#resources" class="hover:underline block py-2 md:py-0">Resources</a>
+      <a href="index.html#apprenticeship" class="hover:underline block py-2 md:py-0">Apprenticeship</a>
+      <a href="archives.html" class="hover:underline block py-2 md:py-0">Archives</a>
+      <a href="give.html" class="hover:underline font-semibold text-blue-600 block py-2 md:py-0">Give</a>
+      <a href="contact.html" class="hover:underline block py-2 md:py-0">Contact</a>
     </nav>
   </header>
 
@@ -62,5 +74,14 @@
     </form>
   </main>
 
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
 </body>
 </html>
