@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Give – Newcomers Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-8 py-4 border-b shadow-sm sticky top-0 bg-white z-50">
+    <div class="font-bold text-xl">NEWCOMERS PROJECT</div>
+    <nav class="space-x-6">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="index.html#about" class="hover:underline">About Us</a>
+      <a href="index.html#resources" class="hover:underline">Resources</a>
+      <a href="index.html#apprenticeship" class="hover:underline">Apprenticeship</a>
+      <a href="archives.html" class="hover:underline">Archives</a>
+      <a href="give.html" class="hover:underline font-semibold text-blue-600">Give</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </nav>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-bold mb-6 text-center">Support the Newcomers Project</h1>
+    <p class="mb-8 text-center text-gray-700">Thank you for your generosity! Your donation helps us continue our mission.</p>
+
+    <form action="#" method="POST" class="space-y-6 bg-gray-50 p-8 rounded-md shadow-md">
+      <div>
+        <label for="name" class="block mb-2 font-semibold">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" 
+               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="email" class="block mb-2 font-semibold">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" 
+               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="amount" class="block mb-2 font-semibold">Donation Amount (CAD)</label>
+        <input type="number" id="amount" name="amount" min="1" required placeholder="e.g. 50" 
+               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="message" class="block mb-2 font-semibold">Message (Optional)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any message or dedication" 
+                  class="w-full border border-gray-300 rounded px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+      <button type="submit" 
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition">
+        Donate Now
+      </button>
+    </form>
+  </main>
+
+</body>
+</html>
