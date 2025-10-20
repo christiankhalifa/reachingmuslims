@@ -14,7 +14,11 @@
 
   <!-- Navbar -->
   <header class="flex justify-between items-center px-8 py-4 border-b shadow-sm sticky top-0 bg-white z-50">
-    <div class="font-bold text-xl">REACHING MUSLIMS WITH THE GOSPEL</div>
+    <div class="font-bold text-xl">
+      <a href="https://reachingmuslims.ca" class="hover:underline">
+        REACHING MUSLIMS WITH THE GOSPEL
+      </a>
+    </div>
 
     <!-- Hamburger button (mobile only) -->
     <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle menu">
@@ -31,6 +35,7 @@
       <a href="#" class="hover:underline block py-2 md:py-0">Home</a>
       <a href="#about" class="hover:underline block py-2 md:py-0">About Us</a>
       <a href="#resources" class="hover:underline block py-2 md:py-0">Resources</a>
+      <a href="https://www.engagingislamconference.org/" target="_blank" rel="noopener noreferrer" class="hover:underline block py-2 md:py-0">Conference</a>
       <a href="#apprenticeship" class="hover:underline block py-2 md:py-0">Apprenticeship</a>
       <a href="archives.html" class="hover:underline block py-2 md:py-0">Archives</a>
       <a href="give.html" class="hover:underline block py-2 md:py-0">Give</a>
@@ -41,10 +46,14 @@
   <!-- Hero Section -->
   <section class="h-[80vh] bg-cover bg-center flex items-center justify-center text-center relative" style="background-image: url('files/top_banner.avif');">
     <div class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0"></div>
-    <div class="relative z-10 text-white px-6">
-      <p class="uppercase text-sm tracking-wide mb-2">Application Open</p>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">9 Month Apprenticeship<br>Among Muslim Newcomers</h1>
-      <a href="#apprenticeship" class="bg-white text-gray-900 px-6 py-2 rounded font-semibold hover:bg-gray-200 transition">Learn More</a>
+    <div class="relative z-10 text-white px-6 max-w-3xl mx-auto">
+      <p class="text-xl md:text-2xl leading-relaxed mb-6 font-bold">
+        GET ENGAGED IN SERVING NEWCOMERS FROM THE MIDDLE EAST IN OUR CANADIAN NEIGHBORHOODS
+      </p>
+      <h3>
+        The unreached of the nations are coming to our local neighborhoods here in Canada.  
+        Many are coming from war affected areas in the Middle East and Northeast Africa. 
+      </h3>
     </div>
   </section>
 
@@ -66,14 +75,19 @@
   <!-- Resources -->
   <section id="resources" class="bg-gray-100 py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <img src="https://www.svgrepo.com/show/520495/book.svg" alt="Book Resources Logo" class="mx-auto mb-4 w-16 h-auto">
       <h2 class="text-3xl font-bold mb-4">Resources</h2>
       <div class="text-left mb-6 text-gray-700">
-        <p>One aspect of our vision is to train and mobilize the Body of Christ to respectfully serve and engage with the Muslim communities in our Canadian urban centers. One way that we do this is through seminars and training venues.</p>
-        <br>
-        <p>Our most in depth training venue is the "Understanding Islam" Class, which is a 12 hour interactive learning opportunity, where we explore topics such as:</p>
+        <p>
+          One aspect of our vision is to train and mobilize the Body of Christ to respectfully serve and engage with the Muslim communities in our Canadian urban centers. One way that we do this is through seminars and training venues.
+        </p>
       </div>
-      <ul class="text-left max-w-2xl mx-auto list-disc list-inside text-gray-700 space-y-2">
+      <div class="text-left mb-6 text-gray-700">
+        <p>
+          Our most in depth training venue is the "Understanding Islam" Class, which is a 12 hour interactive learning opportunity, where we explore topics such as:
+        </p>
+      </div>
+
+      <ul class="text-left max-w-2xl mx-auto list-disc list-inside text-gray-700 space-y-2 mb-8">
         <li>The origins of Islam</li>
         <li>What Islam teaches about Jesus</li>
         <li>What Muslims believe and practice</li>
@@ -82,12 +96,17 @@
         <li>Serving your Middle Eastern neighbor</li>
         <li>Contextual tools to respectfully engage your Muslim friend</li>
       </ul>
-    </div>
-  </section>
 
-  <!-- Bottom Banner -->
-  <section>
-    <img src="files/down_banner.avif" alt="Bottom Banner" class="w-full h-auto object-cover" />
+      <!-- Course image -->
+      <img src="files/onlinecourse.jpg" alt="Understanding Islam Course" 
+          class="mx-auto mb-6 w-full max-w-3xl rounded-lg shadow-lg h-auto">
+
+
+      <a href="https://mentorshipone.teachable.com/p/understanding-islam" target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+        View Course
+      </a>
+    </div>
   </section>
 
   <!-- Apprenticeship -->
@@ -126,7 +145,6 @@
   <script>
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
-
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
     });
