@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact – Alberta Noor Al-Haqq Ministries</title>
+  <title>Shop – Alberta Noor Al-Haqq Ministries</title>
   <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,13 @@
     .nav-link:hover { color:#c19a3e; }
     .nav-link::after { content:''; position:absolute; left:50%; bottom:-4px; width:0; height:2px; background:#c19a3e; transition: width .3s ease, left .3s ease; }
     .nav-link:hover::after { width:100%; left:0; }
-    input:focus, textarea:focus { outline:none; box-shadow: 0 0 0 3px rgba(193,154,62,0.3); border-color:#c19a3e; }
+    .book-card { transition: transform .35s ease, box-shadow .35s ease; }
+    .book-card:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(6,78,59,0.25); }
+    .book-cover {
+      background:
+        radial-gradient(circle at 30% 20%, rgba(251,191,36,0.25), transparent 40%),
+        linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+    }
   </style>
 </head>
 <body>
@@ -80,62 +86,82 @@
       <a href="index.html#resources" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Resources</a>
       <a href="index.html#apprenticeship" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Apprenticeship</a>
       <a href="archives.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Archives</a>
-      <a href="shop.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Shop</a>
+      <a href="shop.html" class="nav-link font-semibold text-noor-gold-600 block py-2 md:py-0">Shop</a>
       <a href="give.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Give</a>
-      <a href="contact.html" class="nav-link font-semibold text-noor-gold-600 block py-2 md:py-0">Contact</a>
+      <a href="contact.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Contact</a>
     </nav>
   </header>
 
-  <section class="py-16 px-6 max-w-2xl mx-auto">
-    <div class="text-center mb-8">
-      <p class="arabic text-noor-gold-500 text-2xl mb-2">تواصلوا مَعَنا</p>
-      <h1 class="text-4xl md:text-5xl font-bold text-noor-emerald-800">Contact Us</h1>
-      <div class="ornament"><span>✦</span></div>
-      <p class="text-noor-ink/75">We would love to hear from you.</p>
-    </div>
-
-    <form action="https://formspree.io/f/mjkrnwjp" method="POST" class="space-y-6 bg-white p-8 rounded-lg shadow-lg border-2 border-noor-gold-300/40">
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">First name *</label>
-        <input name="First name" type="text" required class="w-full border border-noor-gold-300/60 p-3 rounded transition" />
-      </div>
-
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">Last name *</label>
-        <input name="Last name" type="text" required class="w-full border border-noor-gold-300/60 p-3 rounded transition" />
-      </div>
-
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">Email *</label>
-        <input name="Email" type="email" required class="w-full border border-noor-gold-300/60 p-3 rounded transition" />
-      </div>
-
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">Phone *</label>
-        <input name="Phone" type="tel" required class="w-full border border-noor-gold-300/60 p-3 rounded transition" />
-      </div>
-
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">What can we help you with? *</label>
-        <div class="space-y-2 text-noor-ink/85">
-          <label class="flex items-start gap-2"><input type="checkbox" name="Interests" value="Volunteer" class="mt-1 accent-noor-emerald-700"/><span>I would like to volunteer in serving this community.</span></label>
-          <label class="flex items-start gap-2"><input type="checkbox" name="Interests" value="Minister Muslims" class="mt-1 accent-noor-emerald-700"/><span>I would like to learn more about ministering to Muslims.</span></label>
-          <label class="flex items-start gap-2"><input type="checkbox" name="Interests" value="Event Speaker" class="mt-1 accent-noor-emerald-700"/><span>I would like to have you speak at our event or host a training event.</span></label>
-          <label class="flex items-start gap-2"><input type="checkbox" name="Interests" value="Apprenticeship" class="mt-1 accent-noor-emerald-700"/><span>Questions about the Apprenticeship program</span></label>
-          <label class="flex items-start gap-2"><input type="checkbox" name="Interests" value="Other" class="mt-1 accent-noor-emerald-700"/><span>Other</span></label>
-        </div>
-      </div>
-
-      <div>
-        <label class="block mb-2 font-semibold text-noor-emerald-800">Comments / Questions</label>
-        <textarea name="Message" class="w-full border border-noor-gold-300/60 p-3 rounded h-28 transition"></textarea>
-      </div>
-
-      <button type="submit" class="w-full bg-noor-emerald-700 text-noor-cream font-semibold px-6 py-3 rounded shadow-lg hover:bg-noor-emerald-800 hover:shadow-xl transition border-2 border-noor-gold-400">Submit</button>
-    </form>
+  <!-- Page header -->
+  <section class="text-center py-16 px-6">
+    <p class="arabic text-noor-gold-500 text-2xl mb-2">المَتْجَر</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-noor-emerald-800">Shop</h1>
+    <div class="ornament"><span>✦</span></div>
+    <p class="max-w-2xl mx-auto text-noor-ink/75 text-lg">
+      Recommended books and resources to help you understand, love, and reach your Muslim neighbour with the light of the gospel.
+    </p>
   </section>
 
-  <footer class="bg-noor-emerald-800 text-noor-cream mt-10">
+  <!-- Featured book grid -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="grid md:grid-cols-1 lg:grid-cols-1 gap-10 justify-items-center">
+
+      <!-- Featured book card -->
+      <article class="book-card bg-white rounded-lg overflow-hidden shadow-xl border-2 border-noor-gold-300/40 max-w-3xl w-full">
+        <div class="grid md:grid-cols-5">
+
+          <!-- Book cover (decorative placeholder — replace src with real cover image when available) -->
+          <div class="md:col-span-2 book-cover flex items-center justify-center p-10 min-h-[280px]">
+            <div class="text-center text-noor-cream">
+              <!-- Decorative 8-pointed star -->
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-24 h-24 mx-auto mb-4 opacity-90">
+                <g transform="translate(60 60)">
+                  <rect x="-40" y="-40" width="80" height="80" fill="#fbbf24" opacity="0.85"/>
+                  <rect x="-40" y="-40" width="80" height="80" fill="#fef3c7" opacity="0.7" transform="rotate(45)"/>
+                </g>
+                <circle cx="60" cy="60" r="20" fill="#065f46" stroke="#fbbf24" stroke-width="1.5"/>
+                <rect x="58.5" y="48" width="3" height="24" fill="#fef3c7"/>
+                <rect x="52" y="56" width="16" height="3" fill="#fef3c7"/>
+              </svg>
+              <p class="arabic text-noor-gold-200 text-xl mb-1">كِتاب</p>
+              <p class="font-display text-lg italic text-noor-gold-100/90">Featured Resource</p>
+            </div>
+          </div>
+
+          <!-- Book details -->
+          <div class="md:col-span-3 p-8 flex flex-col justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-noor-gold-600 font-semibold mb-2">Featured Book</p>
+              <h2 class="text-3xl font-bold text-noor-emerald-800 mb-3 leading-tight">A Recommended Read</h2>
+              <p class="text-sm text-noor-ink/60 mb-4 italic">A resource we recommend for those engaging with the Muslim world.</p>
+              <p class="text-noor-ink/85 leading-relaxed mb-6">
+                We've selected this book as a thoughtful, gospel-centred resource for understanding Islam and engaging Muslims with grace, truth, and the love of Christ. Click through to Amazon to learn more, read reviews, and purchase your copy.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://a.co/d/05r0WWt8" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-2 bg-noor-emerald-700 text-noor-cream font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-noor-emerald-800 hover:shadow-xl transition border-2 border-noor-gold-400">
+                <span>Buy on Amazon</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M9 7h8v8"/>
+                </svg>
+              </a>
+              <span class="text-xs text-noor-ink/50">External link · opens in new tab</span>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Note for ministry use -->
+    <div class="max-w-3xl mx-auto mt-16 text-center text-sm text-noor-ink/60 italic border-t border-noor-gold-300/40 pt-6">
+      As an Amazon Associate, the ministry may earn from qualifying purchases. All proceeds support our work serving newcomers in Alberta.
+    </div>
+  </section>
+
+  <footer class="bg-noor-emerald-800 text-noor-cream">
     <div class="max-w-6xl mx-auto px-6 py-10 text-center">
       <p class="arabic text-noor-gold-300 text-2xl mb-2">نور الحقّ</p>
       <p class="font-display text-xl mb-1">Alberta Noor Al-Haqq Ministries</p>

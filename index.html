@@ -3,143 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Newcomers Project</title>
+  <title>Alberta Noor Al-Haqq Ministries</title>
+  <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'noor-emerald': {
+              50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',
+              400:'#34d399',500:'#10b981',600:'#047857',700:'#065f46',
+              800:'#064e3b',900:'#022c22'
+            },
+            'noor-gold': {
+              100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',
+              500:'#c19a3e',600:'#a07827',700:'#7c5b1c'
+            },
+            'noor-cream':'#faf6ef',
+            'noor-ivory':'#fffbef',
+            'noor-ink':'#1a2e2a'
+          },
+          fontFamily: {
+            'display': ['"Cormorant Garamond"', 'serif'],
+            'body': ['"Nunito"', 'sans-serif'],
+            'arabic': ['"Amiri"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
+    body { font-family: 'Nunito', sans-serif; background-color:#faf6ef; color:#1a2e2a; }
+    h1,h2,h3,h4 { font-family:'Cormorant Garamond', serif; letter-spacing:0.01em; }
     html { scroll-behavior: smooth; }
+    .arabic { font-family:'Amiri', serif; }
+    .ornament {
+      display:flex; align-items:center; justify-content:center; gap:1rem;
+      color:#c19a3e; margin: 1.25rem auto; max-width: 28rem;
+    }
+    .ornament::before, .ornament::after {
+      content:''; flex:1; height:1px;
+      background: linear-gradient(to right, transparent, #c19a3e, transparent);
+    }
+    .pattern-bg {
+      background-color:#faf6ef;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(193,154,62,0.18) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+    .nav-link { position:relative; transition: color .2s ease; }
+    .nav-link:hover { color:#c19a3e; }
+    .nav-link::after {
+      content:''; position:absolute; left:50%; bottom:-4px;
+      width:0; height:2px; background:#c19a3e; transition: width .3s ease, left .3s ease;
+    }
+    .nav-link:hover::after { width:100%; left:0; }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
   <!-- Navbar -->
-  <header class="flex justify-between items-center px-8 py-4 border-b shadow-sm sticky top-0 bg-white z-50">
-    <div class="font-bold text-xl">
-      <a href="https://reachingmuslims.ca" class="hover:underline">
-        REACHING MUSLIMS WITH THE GOSPEL
-      </a>
-    </div>
+  <header class="flex justify-between items-center px-6 md:px-10 py-4 border-b border-noor-gold-300/40 shadow-sm sticky top-0 bg-noor-cream/95 backdrop-blur-sm z-50">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <!-- Logo: Gospel light reaching the Muslim world -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-11 h-11 flex-shrink-0 transition-transform group-hover:rotate-45 duration-700">
+        <!-- 8-pointed Rub el Hizb star (two squares) -->
+        <g transform="translate(50 50)">
+          <rect x="-36" y="-36" width="72" height="72" fill="#065f46"/>
+          <rect x="-36" y="-36" width="72" height="72" fill="#047857" transform="rotate(45)"/>
+        </g>
+        <!-- Radiating light rays -->
+        <g stroke="#fbbf24" stroke-width="0.9" opacity="0.75" stroke-linecap="round">
+          <line x1="50" y1="50" x2="50" y2="18"/>
+          <line x1="50" y1="50" x2="50" y2="82"/>
+          <line x1="50" y1="50" x2="18" y2="50"/>
+          <line x1="50" y1="50" x2="82" y2="50"/>
+          <line x1="50" y1="50" x2="27" y2="27"/>
+          <line x1="50" y1="50" x2="73" y2="73"/>
+          <line x1="50" y1="50" x2="27" y2="73"/>
+          <line x1="50" y1="50" x2="73" y2="27"/>
+        </g>
+        <!-- Inner medallion -->
+        <circle cx="50" cy="50" r="21" fill="#fef3c7" stroke="#c19a3e" stroke-width="1.5"/>
+        <!-- Cross at the center -->
+        <rect x="48.5" y="38" width="3" height="24" fill="#065f46"/>
+        <rect x="42" y="46" width="16" height="3" fill="#065f46"/>
+      </svg>
+      <div class="leading-tight">
+        <div class="font-display font-semibold text-noor-emerald-800 text-base md:text-xl">
+          Alberta Noor Al-Haqq Ministries
+        </div>
+        <div class="arabic text-noor-gold-500 text-xs md:text-sm tracking-wide">نور الحقّ · Light of the Truth</div>
+      </div>
+    </a>
 
-    <!-- Hamburger button (mobile only) -->
-    <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle menu">
-      <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+    <!-- Hamburger (mobile) -->
+    <button id="menu-btn" class="md:hidden focus:outline-none text-noor-emerald-700" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
 
     <!-- Navigation -->
-    <nav id="menu" class="hidden md:flex space-x-6">
-      <a href="#" class="hover:underline block py-2 md:py-0">Home</a>
-      <a href="#about" class="hover:underline block py-2 md:py-0">About Us</a>
-      <a href="#resources" class="hover:underline block py-2 md:py-0">Resources</a>
-      <a href="https://www.engagingislamconference.org/" target="_blank" rel="noopener noreferrer" class="hover:underline block py-2 md:py-0">Conference</a>
-      <a href="#apprenticeship" class="hover:underline block py-2 md:py-0">Apprenticeship</a>
-      <a href="archives.html" class="hover:underline block py-2 md:py-0">Archives</a>
-      <a href="give.html" class="hover:underline block py-2 md:py-0">Give</a>
-      <a href="contact.html" class="hover:underline block py-2 md:py-0">Contact</a>
+    <nav id="menu" class="hidden md:flex md:items-center md:space-x-6 absolute md:static top-full left-0 right-0 md:bg-transparent bg-noor-cream md:shadow-none shadow-md md:px-0 px-6 md:py-0 py-4 md:flex-row flex-col">
+      <a href="index.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Home</a>
+      <a href="index.html#about" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">About Us</a>
+      <a href="index.html#resources" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Resources</a>
+      <a href="https://www.engagingislamconference.org/" target="_blank" rel="noopener noreferrer" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Conference</a>
+      <a href="index.html#apprenticeship" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Apprenticeship</a>
+      <a href="archives.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Archives</a>
+      <a href="shop.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Shop</a>
+      <a href="give.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Give</a>
+      <a href="contact.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="h-[80vh] bg-cover bg-center flex items-center justify-center text-center relative" style="background-image: url('files/top_banner.avif');">
-    <div class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(6,78,59,0.85) 0%, rgba(4,47,46,0.75) 50%, rgba(28,25,23,0.7) 100%);"></div>
     <div class="relative z-10 text-white px-6 max-w-3xl mx-auto">
-      <p class="text-xl md:text-2xl leading-relaxed mb-6 font-bold">
-        GET ENGAGED IN SERVING NEWCOMERS FROM THE MIDDLE EAST IN OUR CANADIAN NEIGHBORHOODS
+      <p class="arabic text-noor-gold-300 text-2xl md:text-3xl mb-4">نور الحقّ</p>
+      <div class="ornament" style="color:#fbbf24;">
+        <span class="text-2xl">✦</span>
+      </div>
+      <h1 class="font-display text-3xl md:text-5xl font-semibold mb-6 leading-tight">
+        Get Engaged in Serving Newcomers from the Middle East in Our Canadian Neighborhoods
+      </h1>
+      <p class="text-base md:text-lg text-noor-gold-100/95 leading-relaxed max-w-2xl mx-auto">
+        The unreached of the nations are coming to our local neighborhoods here in Canada.
+        Many are arriving from war-affected areas in the Middle East and Northeast Africa.
       </p>
-      <h3>
-        The unreached of the nations are coming to our local neighborhoods here in Canada.  
-        Many are coming from war affected areas in the Middle East and Northeast Africa. 
-      </h3>
     </div>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-16 px-6 max-w-6xl mx-auto">
+  <section id="about" class="py-20 px-6 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="aspect-video">
+      <div class="aspect-video rounded-lg overflow-hidden shadow-xl border-4 border-noor-gold-300/50">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aVRTK6ZnINE" frameborder="0" allowfullscreen></iframe>
       </div>
       <div>
-        <h2 class="text-3xl font-bold mb-4">About Us</h2>
-        <p class="text-gray-700 text-lg">
-          We are a Christian ministry based in Alberta, Canada​ with a focus of serving newcomers to our country​ from a Middle Eastern Muslim background. Many o​f these beautiful people who have come to our cou​ntry as refugees have experienced trauma and loss p​rior to arriving here. We take seriously the Biblical man​date to "love the alien as yourself, for you were aliens in t​he land of Egypt: I am the Lord your God" (Leviticus 19:​34). We do this practically through helping these ne​wcomers navigate new life in Canada, and through teachi​ng them English, through our "Adopt a Refugee Progr​am." We are also intentional about engaging these n​ewcomer friends in matters of Christian faith, within the con​text of respectful relationship.
+        <p class="arabic text-noor-gold-500 text-xl mb-2">من نحن</p>
+        <h2 class="text-4xl font-bold mb-2 text-noor-emerald-800">About Us</h2>
+        <div class="w-20 h-1 bg-noor-gold-400 mb-6 rounded-full"></div>
+        <p class="text-noor-ink/85 text-lg leading-relaxed">
+          We are a Christian ministry based in Alberta, Canada with a focus of serving newcomers to our country from a Middle Eastern Muslim background. Many of these beautiful people who have come to our country as refugees have experienced trauma and loss prior to arriving here. We take seriously the Biblical mandate to <em class="text-noor-emerald-700">"love the alien as yourself, for you were aliens in the land of Egypt: I am the Lord your God"</em> (Leviticus 19:34). We do this practically through helping these newcomers navigate new life in Canada, and through teaching them English, through our "Adopt a Refugee Program." We are also intentional about engaging these newcomer friends in matters of Christian faith, within the context of respectful relationship.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Resources -->
-  <section id="resources" class="bg-gray-100 py-16 px-6">
+  <section id="resources" class="pattern-bg py-20 px-6 border-y border-noor-gold-300/40">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Resources</h2>
-      <div class="text-left mb-6 text-gray-700">
+      <p class="arabic text-noor-gold-500 text-xl mb-2">مَوارِد</p>
+      <h2 class="text-4xl font-bold mb-2 text-noor-emerald-800">Resources</h2>
+      <div class="ornament"><span>✦</span></div>
+
+      <div class="text-left mb-6 text-noor-ink/85 text-lg leading-relaxed">
         <p>
           One aspect of our vision is to train and mobilize the Body of Christ to respectfully serve and engage with the Muslim communities in our Canadian urban centers. One way that we do this is through seminars and training venues.
         </p>
       </div>
-      <div class="text-left mb-6 text-gray-700">
+      <div class="text-left mb-6 text-noor-ink/85 text-lg leading-relaxed">
         <p>
-          Our most in depth training venue is the "Understanding Islam" Class, which is a 12 hour interactive learning opportunity, where we explore topics such as:
+          Our most in-depth training venue is the <strong class="text-noor-emerald-700">Understanding Islam Class</strong>, a 12-hour interactive learning opportunity where we explore topics such as:
         </p>
       </div>
 
-      <ul class="text-left max-w-2xl mx-auto list-disc list-inside text-gray-700 space-y-2 mb-8">
-        <li>The origins of Islam</li>
-        <li>What Islam teaches about Jesus</li>
-        <li>What Muslims believe and practice</li>
-        <li>How the Qur'an was compiled/written</li>
-        <li>Do Muslims and Christians worship the same God?</li>
-        <li>Serving your Middle Eastern neighbor</li>
-        <li>Contextual tools to respectfully engage your Muslim friend</li>
+      <ul class="text-left max-w-2xl mx-auto text-noor-ink/85 space-y-2 mb-10">
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> The origins of Islam</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> What Islam teaches about Jesus</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> What Muslims believe and practice</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> How the Qur'an was compiled and written</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> Do Muslims and Christians worship the same God?</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> Serving your Middle Eastern neighbor</li>
+        <li class="flex items-start gap-3"><span class="text-noor-gold-500 mt-1">✦</span> Contextual tools to respectfully engage your Muslim friend</li>
       </ul>
 
-      <!-- Course image -->
-      <img src="files/onlinecourse.jpg" alt="Understanding Islam Course" 
-          class="mx-auto mb-6 w-full max-w-3xl rounded-lg shadow-lg h-auto">
-
+      <img src="files/onlinecourse.jpg" alt="Understanding Islam Course"
+           class="mx-auto mb-8 w-full max-w-3xl rounded-lg shadow-2xl h-auto border-4 border-noor-gold-300/50">
 
       <a href="https://mentorshipone.teachable.com/p/understanding-islam" target="_blank" rel="noopener noreferrer"
-         class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
-        View Course
+         class="inline-block bg-noor-emerald-700 text-noor-cream font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-noor-emerald-800 hover:shadow-xl transition border-2 border-noor-gold-400">
+        View Course →
       </a>
     </div>
   </section>
 
   <!-- Apprenticeship -->
-  <section id="apprenticeship" class="py-16 px-6 max-w-4xl mx-auto">
+  <section id="apprenticeship" class="py-20 px-6 max-w-4xl mx-auto">
     <div class="text-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Apprenticeship Icon" class="mx-auto mb-6 w-20 h-20">
-      <h2 class="text-3xl font-bold mb-4 tracking-wider">APPRENTICESHIP</h2>
+      <!-- Decorative SVG instead of generic icon -->
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-6 w-20 h-20">
+        <g transform="translate(40 40)">
+          <rect x="-28" y="-28" width="56" height="56" fill="#065f46" opacity="0.9"/>
+          <rect x="-28" y="-28" width="56" height="56" fill="#c19a3e" opacity="0.7" transform="rotate(45)"/>
+        </g>
+        <circle cx="40" cy="40" r="15" fill="#faf6ef" stroke="#c19a3e" stroke-width="1.5"/>
+        <rect x="38.5" y="32" width="3" height="16" fill="#065f46"/>
+        <rect x="34" y="38" width="12" height="3" fill="#065f46"/>
+      </svg>
+      <p class="arabic text-noor-gold-500 text-xl mb-2">التَلْمَذَة</p>
+      <h2 class="text-4xl font-bold mb-2 tracking-wide text-noor-emerald-800">Apprenticeship</h2>
+      <div class="ornament"><span>✦</span></div>
     </div>
-    <div class="text-left text-gray-700 space-y-6">
-      <p class="text-lg">
-        Get hands on experience and an in depth learning opportunity through our 9 month Apprenticeship Program.
+    <div class="text-left text-noor-ink/85 space-y-6 text-lg leading-relaxed">
+      <p>
+        Get hands-on experience and an in-depth learning opportunity through our 9-month Apprenticeship Program.
       </p>
-      <p class="text-lg">
-        You will be immersed in serving a growing Middle Eastern community in a Canadian urban center, while developing a framework for ministry to Muslims...without leaving Canada.
+      <p>
+        You will be immersed in serving a growing Middle Eastern community in a Canadian urban center, while developing a framework for ministry to Muslims — without leaving Canada.
       </p>
       <div>
-        <p>There are four components to the Apprenticeship Program:</p>
-        <ol class="list-decimal list-inside space-y-2">
-          <li>Immersion in serving and ministering to this Middle Eastern newcomer community</li>
-          <li>Academic learning on Islamic worldview from a biblical lens</li>
-          <li>Hands-on experience as a missionary in training in Canada</li>
-          <li>Mentorship from an experienced worker</li>
+        <p class="mb-3 font-semibold text-noor-emerald-800">There are four components to the Apprenticeship Program:</p>
+        <ol class="space-y-3">
+          <li class="flex gap-4"><span class="font-display text-2xl text-noor-gold-500 leading-none">١</span><span>Immersion in serving and ministering to this Middle Eastern newcomer community</span></li>
+          <li class="flex gap-4"><span class="font-display text-2xl text-noor-gold-500 leading-none">٢</span><span>Academic learning on Islamic worldview from a biblical lens</span></li>
+          <li class="flex gap-4"><span class="font-display text-2xl text-noor-gold-500 leading-none">٣</span><span>Hands-on experience as a missionary in training in Canada</span></li>
+          <li class="flex gap-4"><span class="font-display text-2xl text-noor-gold-500 leading-none">٤</span><span>Mentorship from an experienced worker</span></li>
         </ol>
       </div>
-      <p class="text-lg font-medium text-gray-800 text-center">
-        If you are interested in learning more about the Apprenticeship, please <a href="contact.html" class="font-bold text-blue-600 hover:underline">contact us</a>.
+      <p class="text-lg font-medium text-center pt-4">
+        If you are interested in learning more about the Apprenticeship, please
+        <a href="contact.html" class="font-bold text-noor-emerald-700 underline decoration-noor-gold-400 decoration-2 underline-offset-4 hover:text-noor-gold-600">contact us</a>.
       </p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 text-center text-sm text-gray-500 border-t mt-10">
-    &copy; 2025 Newcomers Project. All rights reserved.
+  <footer class="bg-noor-emerald-800 text-noor-cream mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+      <p class="arabic text-noor-gold-300 text-2xl mb-2">نور الحقّ</p>
+      <p class="font-display text-xl mb-1">Alberta Noor Al-Haqq Ministries</p>
+      <p class="text-sm text-noor-gold-100/70 italic mb-4">"I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life." — John 8:12</p>
+      <div class="ornament" style="color:#fbbf24; max-width:16rem;"><span>✦</span></div>
+      <p class="text-xs text-noor-gold-100/60">&copy; 2025 Alberta Noor Al-Haqq Ministries. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
@@ -147,6 +256,7 @@
     const menu = document.getElementById('menu');
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+      menu.classList.toggle('flex');
     });
   </script>
 </body>

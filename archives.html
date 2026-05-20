@@ -3,105 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us – Newcomers Project</title>
+  <title>Archives – Alberta Noor Al-Haqq Ministries</title>
+  <link rel="icon" type="image/svg+xml" href="files/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'noor-emerald': {50:'#ecfdf5',100:'#d1fae5',200:'#a7f3d0',300:'#6ee7b7',400:'#34d399',500:'#10b981',600:'#047857',700:'#065f46',800:'#064e3b',900:'#022c22'},
+            'noor-gold': {100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#c19a3e',600:'#a07827',700:'#7c5b1c'},
+            'noor-cream':'#faf6ef','noor-ivory':'#fffbef','noor-ink':'#1a2e2a'
+          },
+          fontFamily: {
+            'display': ['"Cormorant Garamond"', 'serif'],
+            'body': ['"Nunito"', 'sans-serif'],
+            'arabic': ['"Amiri"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
+    body { font-family:'Nunito', sans-serif; background-color:#faf6ef; color:#1a2e2a; }
+    h1,h2,h3,h4 { font-family:'Cormorant Garamond', serif; }
     html { scroll-behavior: smooth; }
+    .arabic { font-family:'Amiri', serif; }
+    .ornament { display:flex; align-items:center; justify-content:center; gap:1rem; color:#c19a3e; margin:1.25rem auto; max-width:28rem; }
+    .ornament::before, .ornament::after { content:''; flex:1; height:1px; background: linear-gradient(to right, transparent, #c19a3e, transparent); }
+    .nav-link { position:relative; transition: color .2s ease; }
+    .nav-link:hover { color:#c19a3e; }
+    .nav-link::after { content:''; position:absolute; left:50%; bottom:-4px; width:0; height:2px; background:#c19a3e; transition: width .3s ease, left .3s ease; }
+    .nav-link:hover::after { width:100%; left:0; }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
   <!-- Navbar -->
-  <header class="flex justify-between items-center px-8 py-4 border-b shadow-sm sticky top-0 bg-white z-50">
-    <div class="font-bold text-xl">NEWCOMERS PROJECT</div>
+  <header class="flex justify-between items-center px-6 md:px-10 py-4 border-b border-noor-gold-300/40 shadow-sm sticky top-0 bg-noor-cream/95 backdrop-blur-sm z-50">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-11 h-11 flex-shrink-0 transition-transform group-hover:rotate-45 duration-700">
+        <g transform="translate(50 50)">
+          <rect x="-36" y="-36" width="72" height="72" fill="#065f46"/>
+          <rect x="-36" y="-36" width="72" height="72" fill="#047857" transform="rotate(45)"/>
+        </g>
+        <g stroke="#fbbf24" stroke-width="0.9" opacity="0.75" stroke-linecap="round">
+          <line x1="50" y1="50" x2="50" y2="18"/><line x1="50" y1="50" x2="50" y2="82"/>
+          <line x1="50" y1="50" x2="18" y2="50"/><line x1="50" y1="50" x2="82" y2="50"/>
+          <line x1="50" y1="50" x2="27" y2="27"/><line x1="50" y1="50" x2="73" y2="73"/>
+          <line x1="50" y1="50" x2="27" y2="73"/><line x1="50" y1="50" x2="73" y2="27"/>
+        </g>
+        <circle cx="50" cy="50" r="21" fill="#fef3c7" stroke="#c19a3e" stroke-width="1.5"/>
+        <rect x="48.5" y="38" width="3" height="24" fill="#065f46"/>
+        <rect x="42" y="46" width="16" height="3" fill="#065f46"/>
+      </svg>
+      <div class="leading-tight">
+        <div class="font-display font-semibold text-noor-emerald-800 text-base md:text-xl">Alberta Noor Al-Haqq Ministries</div>
+        <div class="arabic text-noor-gold-500 text-xs md:text-sm tracking-wide">نور الحقّ · Light of the Truth</div>
+      </div>
+    </a>
 
-    <!-- Hamburger button (mobile only) -->
-    <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle menu">
-      <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
+    <button id="menu-btn" class="md:hidden focus:outline-none text-noor-emerald-700" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
     </button>
 
-    <!-- Navigation -->
-    <nav id="menu" class="hidden md:flex md:space-x-6 space-x-0 space-y-4 md:space-y-0 flex-col md:flex-row">
-      <a href="index.html" class="hover:underline block md:inline-block">Home</a>
-      <a href="index.html#about" class="hover:underline block md:inline-block">About Us</a>
-      <a href="index.html#resources" class="hover:underline block md:inline-block">Resources</a>
-      <a href="index.html#apprenticeship" class="hover:underline block md:inline-block">Apprenticeship</a>
-      <a href="archives.html" class="hover:underline font-semibold text-blue-600 block md:inline-block">Archives</a>
-      <a href="give.html" class="hover:underline block md:inline-block">Give</a>
-      <a href="contact.html" class="hover:underline block md:inline-block">Contact</a>
+    <nav id="menu" class="hidden md:flex md:items-center md:space-x-6 absolute md:static top-full left-0 right-0 md:bg-transparent bg-noor-cream md:shadow-none shadow-md md:px-0 px-6 md:py-0 py-4 md:flex-row flex-col">
+      <a href="index.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Home</a>
+      <a href="index.html#about" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">About Us</a>
+      <a href="index.html#resources" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Resources</a>
+      <a href="index.html#apprenticeship" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Apprenticeship</a>
+      <a href="archives.html" class="nav-link font-semibold text-noor-gold-600 block py-2 md:py-0">Archives</a>
+      <a href="shop.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Shop</a>
+      <a href="give.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Give</a>
+      <a href="contact.html" class="nav-link font-medium text-noor-emerald-800 block py-2 md:py-0">Contact</a>
     </nav>
   </header>
 
+  <!-- Header -->
+  <section class="text-center py-12 px-6">
+    <p class="arabic text-noor-gold-500 text-2xl mb-2">المَحْفوظات</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-noor-emerald-800">Conference Archives</h1>
+    <div class="ornament"><span>✦</span></div>
+    <p class="max-w-2xl mx-auto text-noor-ink/75 text-lg">Past sessions from the Engaging Islam Conference, freely available for the equipping of the Body of Christ.</p>
+  </section>
+
   <!-- 3 Columns YouTube Playlists -->
-  <section class="max-w-7xl mx-auto px-4 py-10">
+  <section class="max-w-7xl mx-auto px-6 pb-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <!-- 2026 Playlist -->
-      <div>
-        <h2 class="text-xl font-bold mb-4 text-center">Engaging Islam Conference 2026 Playlist</h2>
-        <div class="aspect-w-16 aspect-h-9">
-          <iframe 
-            class="w-full h-[200px] md:h-[270px]" 
-            src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaE6JIJHF_2ZCh8ogXFVRPas" 
-            title="YouTube playlist 2026" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-noor-gold-300/40 hover:shadow-xl transition">
+        <div class="bg-noor-emerald-700 text-noor-cream py-3 px-4 text-center">
+          <h2 class="text-lg font-semibold font-display">Engaging Islam 2026</h2>
+        </div>
+        <div class="p-3">
+          <iframe class="w-full h-[200px] md:h-[270px] rounded" src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaE6JIJHF_2ZCh8ogXFVRPas" title="YouTube playlist 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- 2025 Playlist -->
-      <div>
-        <h2 class="text-xl font-bold mb-4 text-center">Engaging Islam Conference 2025 Playlist</h2>
-        <div class="aspect-w-16 aspect-h-9">
-          <iframe 
-            class="w-full h-[200px] md:h-[270px]" 
-            src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaFE3mvN7DEIA2LbAOxR2GKa" 
-            title="YouTube playlist 2025" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-noor-gold-300/40 hover:shadow-xl transition">
+        <div class="bg-noor-emerald-700 text-noor-cream py-3 px-4 text-center">
+          <h2 class="text-lg font-semibold font-display">Engaging Islam 2025</h2>
+        </div>
+        <div class="p-3">
+          <iframe class="w-full h-[200px] md:h-[270px] rounded" src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaFE3mvN7DEIA2LbAOxR2GKa" title="YouTube playlist 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- 2024 Playlist -->
-      <div>
-        <h2 class="text-xl font-bold mb-4 text-center">Engaging Islam Conference 2024 Playlist</h2>
-        <div class="aspect-w-16 aspect-h-9">
-          <iframe 
-            class="w-full h-[200px] md:h-[270px]" 
-            src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaG01-5qNsyrwHnGqj85Dnqp" 
-            title="YouTube playlist 2024" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-noor-gold-300/40 hover:shadow-xl transition">
+        <div class="bg-noor-emerald-700 text-noor-cream py-3 px-4 text-center">
+          <h2 class="text-lg font-semibold font-display">Engaging Islam 2024</h2>
+        </div>
+        <div class="p-3">
+          <iframe class="w-full h-[200px] md:h-[270px] rounded" src="https://www.youtube.com/embed/videoseries?list=PL7lpzf56vhaG01-5qNsyrwHnGqj85Dnqp" title="YouTube playlist 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
     </div>
   </section>
 
-  <footer class="py-6 text-center text-sm text-gray-500 border-t mt-10">
-    &copy; 2025 Newcomers Project. All rights reserved.
+  <footer class="bg-noor-emerald-800 text-noor-cream">
+    <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+      <p class="arabic text-noor-gold-300 text-2xl mb-2">نور الحقّ</p>
+      <p class="font-display text-xl mb-1">Alberta Noor Al-Haqq Ministries</p>
+      <p class="text-sm text-noor-gold-100/70 italic mb-4">"I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life." — John 8:12</p>
+      <div class="ornament" style="color:#fbbf24; max-width:16rem;"><span>✦</span></div>
+      <p class="text-xs text-noor-gold-100/60">&copy; 2025 Alberta Noor Al-Haqq Ministries. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); menu.classList.toggle('flex'); });
   </script>
-
 </body>
 </html>
